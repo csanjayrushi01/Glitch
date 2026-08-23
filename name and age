@@ -1,0 +1,19 @@
+# Validated version (ensures non-empty name and integer age)
+while True:
+    name = input("Enter your name: ").strip()
+    if name:
+        break
+    print("Name cannot be empty. Please try again.")
+
+while True:
+    age_str = input("Enter your age: ").strip()
+    try:
+        age = int(age_str)
+        if age < 0:
+            print("Age cannot be negative. Please enter a valid age.")
+            continue
+        break
+    except ValueError:
+        print("Please enter a valid integer for age.")
+
+print(f"Hello, {name}! You are {age} years old.")
