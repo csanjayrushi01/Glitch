@@ -1,0 +1,50 @@
+# Arithmetic operators examples in Python
+
+a = 10
+b = 3
+
+# Basic binary operators
+print("a + b =", a + b)      # addition         -> 13
+print("a - b =", a - b)      # subtraction      -> 7
+print("a * b =", a * b)      # multiplication   -> 30
+print("a / b =", a / b)      # true division    -> 3.3333333333333335 (float)
+print("a // b =", a // b)    # floor division   -> 3 (int)
+print("a % b =", a % b)      # modulus          -> 1
+print("a ** b =", a ** b)    # exponentiation   -> 1000
+
+# Unary operators
+print("-a =", -a)            # unary negation   -> -10
+print("+a =", +a)            # unary plus       -> 10
+
+# Augmented assignment
+x = 5
+x += 2  # same as x = x + 2
+print("x after x += 2 ->", x)  # 7
+
+# Mixing types (int and float)
+c = 2.5
+print("a + c =", a + c)      # -> 12.5 (float result)
+
+# Operator precedence (PEMDAS-like: **, unary +/-, *, /, //, %, +, -)
+result = 2 + 3 * 4 ** 2 / (1 + 1)
+# Evaluate step-by-step:
+# 4 ** 2 = 16
+# 3 * 16 = 48
+# 1 + 1 = 2
+# 48 / 2 = 24.0
+# 2 + 24.0 = 26.0
+print("result =", result)    # -> 26.0
+
+# Useful small demo function
+def divide_and_report(numerator, denominator):
+    try:
+        return {
+            "division": numerator / denominator,
+            "floor_division": numerator // denominator,
+            "remainder": numerator % denominator,
+        }
+    except ZeroDivisionError:
+        return "Error: division by zero"
+
+print("divide_and_report(7, 2) ->", divide_and_report(7, 2))
+print("divide_and_report(7, 0) ->", divide_and_report(7, 0))
